@@ -1,0 +1,35 @@
+name: 🚢 SFTP Deployment 🚢
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📨 Checkout repository 📨
+        uses: actions/checkout@v2
+
+      - name: 📝 Install Node.js and npm 📝
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22.x"
+
+      - name: 📥 Install dependencies 📥
+        run: npm install
+
+      - name: 📦 Build project 📦
+        run: npm run build
+
+      - name: 🚀 Upload dist 🚀 via SFTP 🔑
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.SFTP_STRATO_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }}
+          local_path: "./dist"
+          remote_path: "TomWebsite/"
