@@ -1,0 +1,33 @@
+@use "../basics" as *;
+
+.studio {
+  .studio__container {
+    display: grid;
+    padding-top: 2rem;
+
+    @include breakpoint-up("md") {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .studio__heading {
+    font-size: 2rem;
+  }
+
+  .studio__table {
+    font-size: 1.3rem;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .studio__image {
+    align-self: flex-end;
+    max-height: 30rem;
+    justify-self: center;
+
+    @include breakpoint-up("md") {
+      justify-self: unset;
+      max-height: unset;
+    }
+  }
+}

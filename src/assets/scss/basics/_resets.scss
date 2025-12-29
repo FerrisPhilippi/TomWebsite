@@ -1,0 +1,56 @@
+ :root {
+	font-size: 4vw;
+    font-family: 'Roboto';
+    background-color: var(--color-white);
+
+	@media screen and (width >= 360px) {
+		font-size: 16px;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+
+	&.no-body-scrolling {
+		overflow: hidden;
+	}
+}
+
+img,
+video {
+	display: block;
+	line-height: 0;
+}
+
+section {
+	overflow: clip visible;
+}
+
+img,
+picture,
+svg,
+video {
+	display: block;
+	line-height: 0;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

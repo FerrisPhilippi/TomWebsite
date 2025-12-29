@@ -1,0 +1,124 @@
+@use "../basics" as *;
+
+.contact {
+  padding-top: 2rem;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Links ausgerichtet
+  padding-bottom: 4rem;
+
+  .contact__heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; // Links ausgerichtet
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .kontakt-block__form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    @include breakpoint-up('md') {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .input-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 1rem); // Zwei Spalten mit Abstand
+    min-width: 280px;
+  }
+
+  .kontakt-block__full {
+    flex: 1 1 100%; // Volle Breite für größere Eingabefelder
+  }
+
+  .input-block__text,
+  .input-block__select {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .input-block__checkbox {
+    background-color: white;
+    color: black;
+  }
+
+  .kontakt-block__submit {
+    width: auto; // Breite anpassen, statt 100%
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #6225e3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .input-block__checkbox {
+    align-self: flex-start;
+    width: 20px;
+    height: 20px;
+  }
+
+  .alternativen {
+    padding-top: 2rem;
+  }
+
+  .input-block__checkbox {
+    appearance: none; // Standard-Styling entfernen
+    width: 20px;
+    height: 20px;
+    background-color: white; // Hintergrundfarbe weiß
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+
+  // Stil für das Häkchen, wenn angeklickt
+  .input-block__checkbox:checked::before {
+    content: "✔";
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .input-block__checkbox-label {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .kontakt-block__submit {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+
+    &:hover {
+      background-color: var(--color-primary-container);
+      color: var(--color-on-surface);
+    }
+  }
+  .link {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}

@@ -23,6 +23,9 @@ jobs:
 
       - name: 📦 Build project 📦
         run: npm run build
+        
+      - name: 🧹 Delete index.html from dist 🧹
+        run: rm ./dist/index.html
 
       - name: 🚀 Upload dist 🚀 via SFTP 🔑
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -32,4 +35,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           port: ${{ secrets.SFTP_PORT }}
           local_path: "./dist"
-          remote_path: "TomWebsite/"
+          remote_path: "StudioWebsite/"

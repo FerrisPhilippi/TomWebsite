@@ -13,6 +13,7 @@
     "vite": "^6.1.0"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "klaro": "^0.7.21",
     "sass": "^1.85.0"
   }

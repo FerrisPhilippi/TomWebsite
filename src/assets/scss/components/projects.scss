@@ -1,0 +1,36 @@
+.projects {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .projects__heading {
+    font-size: 2rem;
+  }
+
+  #image-slider {
+    align-self: flex-start;
+    width: 100%;
+    height: auto;
+    //margin: 0 auto; //zentriert
+  }
+
+  .splide__slide {
+    position: relative;
+    width: 100%; /* Slider-Element nimmt die ganze Breite ein */
+    padding-top: 56.25%; /* 16:9 Seitenverhältnis (56.25% ist das Verhältnis von 9/16) */
+    overflow: hidden; /* Bild wird innerhalb des Containers abgeschnitten */
+  }
+
+  .splide__slide img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Das Bild wird zugeschnitten, um den Container auszufüllen */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Bild so verschieben, dass es immer in der Mitte bleibt */
+  }
+}

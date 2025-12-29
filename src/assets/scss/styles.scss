@@ -1,1 +1,26 @@
-@use './lib/klaro';
+// Basics
+@use "basics";
+
+// Components
+@use "./components/homestage.scss";
+@use "./components/location.scss";
+@use "./components/costs.scss";
+@use "./components/studio.scss";
+@use "./components/contact.scss";
+@use "./components/projects.scss";
+@use "./components/footer.scss";
+
+// Other
+@use "./lib/klaro"; // Cookies
+
+:root {
+  font-family: "Standard";
+  color: var(--color-on-surface);
+  background-color: var(--color-white);
+}
+header,
+body {
+  background-color: var(--color-white);
+  margin: 0;
+  width: 100vw;
+}

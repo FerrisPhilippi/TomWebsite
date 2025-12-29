@@ -1,0 +1,111 @@
+<section class="contact content-width-lg">
+    <h2 class="contact__heading">Kontakt</h2>
+
+    <div class="block full-width" id="REX_VALUE[1]">
+            <div class="contact__block">
+                <form action="" class="kontakt-block__form" method="POST" enctype="multipart/form-data">
+
+                    <!-- Select Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">Anrede*</p>
+                        <select required class="input-block__select" name="title" id="">
+                            <option disabled selected="selected" value="-"></option>
+                            <option value="keine Angabe">Keine Angabe</option>
+                            <option value="Frau">Frau</option>
+                            <option value="Herr">Herr</option>
+                        </select>
+                    </div>
+
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__full input-block">
+                        <p class="input-block__title">Name <span class="--light">(Nachname, Vorname)</span>*</p>
+                        <input required type="text" class="input-block__text" name="name">
+                    </div>
+
+                    <!-- Email Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">
+                            Firma</p>
+                        <input type="text" class="input-block__text" name="company">
+                    </div>
+
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">Straße</p>
+                        <input type="text" class="input-block__text" name="street">
+                    </div>
+                    
+                    <!-- Email Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">
+                            PLZ</p>
+                        <input type="text" class="input-block__text" name="plz">
+                    </div>
+
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">Ort</p>
+                        <input type="text" class="input-block__text" name="location">
+                    </div>
+                    
+                    <!-- Email Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">
+                            E-Mail*</p>
+                        <input required type="email" class="input-block__text" name="email">
+                    </div>
+
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__half input-block">
+                        <p class="input-block__title">Rufnummer*</p>
+                        <input required type="text" class="input-block__text" name="phone">
+                    </div>
+                    
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__full input-block">
+                        <p class="input-block__title">Betreff*</p>
+                        <input required type="text" class="input-block__text" name="subject">
+                    </div>
+
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__full input-block">
+                        <p class="input-block__title">Nachricht*</p>
+                        <textarea rows="10" class="input-block__text" name="message"></textarea>
+                    </div>
+
+                    <!-- Text Input Block-->
+                    <div class="kontakt-block__full input-block">
+                        <input required class="input-block__checkbox" type="checkbox" name="acception" id="daten">
+                        <label class="input-block__checkbox-label" for="daten">Ich stimme zu, dass meine angegebenen
+                            Daten aus dem Kontaktformular zur Bearbeitung erhoben und verarbeitet
+                            werden.</label>
+                    </div>
+
+                    <div class="kontakt-block__full kontakt-block__hinweis">
+                        <p><strong>Vielen Dank für Ihre Nachricht.</strong><br>
+                        Sie erhalten automatisch eine Kopie an Ihre E-mail Adresse. Ihre Daten werden nicht an Dritte weitergegeben.</p>
+                        <br>
+                        <p></p><strong>Hinweis</strong> <br>
+                        Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="link" href="mailto:studio@tomphilippi.com">studio@tomphilippi.com</a> 
+                        widerrufen. Die Daten werden nach der Widerrufung gelöscht. In unserer Datenschutzerklärung
+                        finden Sie detaillierte Informationen zum Umgang mit Nutzerdaten.
+                        <br> <br>
+                        *Pflichtfelder </p>
+                    </div>
+
+                    <!-- START Honeypot -->
+                    <input type="text" autocomplete="off" name="mail" type="text" style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                    <!-- ENDE Honeypot -->
+
+                    <button class="kontakt-block__submit button button__filled" type="submit" name="submit">Absenden</button>
+
+                </form>
+            </div>
+            
+            <div class="alternativen">
+<div class="contact__text">Alternativ Mail an: <a class="link" href="mailto:t.studio@tomphilippi.com">studio@tomphilippi.com</a></div>
+    <div class="contact__text">Oder Anrufen unter: 0711 484490</div>
+            </div>
+            
+    </div>
+</section>

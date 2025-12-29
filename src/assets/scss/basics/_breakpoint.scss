@@ -1,0 +1,87 @@
+@use "sass:map";
+@use "sass:string";
+@use "sass:list";
+
+$breakpoints: (
+  "2xs": "0",
+  "xs": "360px",
+  "sm": "544px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1280px",
+  "2xl": "1920px",
+);
+
+$breakpoints-max: (
+  "2xs": "359px",
+  "xs": "543px",
+  "sm": "767px",
+  "md": "991px",
+  "lg": "1279px",
+  "xl": "1439px",
+  "2xl": "100000px",
+);
+
+@mixin breakpoint-up($size) {
+  @if not map.get($breakpoints, $size) {
+    @warn "Breakpoint \"#{$size}\" not available";
+  }
+
+  $breakpoint-value: map.get($breakpoints, $size);
+
+  @media screen and (width >= $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @if not map.get($breakpoints, $size) {
+    @warn "Breakpoint \"#{$size}\" not available";
+  }
+
+  $breakpoint-value: map.get(
+    $breakpoints,
+    get-next-breakpoint($breakpoints, $size)
+  );
+
+  @if not $breakpoint-value {
+    $breakpoint-value: "999999px";
+  }
+
+  @media screen and (width < $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin breakpoint-only($size) {
+  @if not map.get($breakpoints, $size) {
+    @warn "Breakpoint \"#{$size}\" not available";
+  }
+
+  $breakpoint-small: map.get($breakpoints, $size);
+  $breakpoint-large: map.get(
+    $breakpoints,
+    get-next-breakpoint($breakpoints, $size)
+  );
+
+  @if not $breakpoint-large {
+    $breakpoint-large: "999999px";
+  }
+
+  @media screen and ($breakpoint-small <= width < $breakpoint-large) {
+    @content;
+  }
+}
+
+@function get-next-breakpoint($map, $key) {
+  $keys: map.keys($map);
+  $mapindex: list.index($keys, $key);
+
+  $mapkey: null;
+
+  @if $mapindex + 1 <= list.length($keys) {
+    $mapkey: list.nth($keys, $mapindex + 1);
+  }
+
+  @return $mapkey;
+}

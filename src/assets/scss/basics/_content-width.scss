@@ -1,0 +1,30 @@
+@use "breakpoint.scss";
+
+$content-width: (
+	'2xs': 40rem,
+	'xs': 54rem,
+	'sm': 68rem,
+	'md': 72rem,
+	'lg': 82rem,
+	'xl': 87.5rem,
+);
+
+:root {
+	--content-padding: 0.75rem;
+
+	@include breakpoint.breakpoint-up('lg') {
+		--content-padding: 2rem;
+	}
+}
+
+@each $width, $value in $content-width {
+	.content-width-#{$width} {
+		max-width: calc(100% - var(--content-padding) * 2);
+		width: #{$value};
+		margin-inline: auto;
+	}
+}
+
+.content-width-full {
+	width: 100vw;
+}

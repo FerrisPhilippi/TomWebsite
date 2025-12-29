@@ -1,13 +1,82 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <meta name="language" content="Deutsch" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Studio Philippi" />
+    <meta
+      name="title"
+      content="Fotostudio Philippi | Fotostudio mieten in Stuttgart"
+    />
+    <meta
+      name="description"
+      content="Studio Philippi – Ihr Fotostudio zur Miete in Stuttgart. Perfekt ausgestattet für professionelle Shootings, Videoproduktionen und Events. Jetzt anfragen!"
+    />
+    <meta
+      name="keywords"
+      content="Fotostudio mieten Stuttgart, Mietstudio Stuttgart, Fotolocation Stuttgart, Studio Philippi, Fotostudio für Fotografen"
+    />
+    <title>Fotostudio Philippi | Fotostudio mieten in Stuttgart</title>
+
+    <!-- Open Graph Meta für Social Media -->
+    <meta
+      property="og:title"
+      content="Fotostudio Philippi | Fotostudio mieten in Stuttgart"
+    />
+    <meta
+      property="og:description"
+      content="Professionelles Fotostudio zur Miete in Stuttgart. Ideal für Shootings, Videoproduktionen und mehr. Jetzt buchen!"
+    />
+    <meta property="og:image" content="/studio-preview.jpg" />
+    <meta property="og:url" content="https://fotostudiophilippi.de/" />
+
+    <!-- Twitter Meta -->
+    <meta
+      name="twitter:title"
+      content="Fotostudio Philippi | Fotostudio mieten in Stuttgart"
+    />
+    <meta
+      name="twitter:description"
+      content="Professionelles Fotostudio zur Miete in Stuttgart. Ideal für Shootings, Videoproduktionen und mehr. Jetzt buchen!"
+    />
+    <meta name="twitter:image" content="/studio-preview.jpg" />
+
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./src/assets/scss/basics/splide.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Fotostudio Philippi",
+        "image": "https://fotostudiophilippi.de/studio-preview.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rudolfstraße 20a",
+          "addressLocality": "Stuttgart",
+          "postalCode": "70190",
+          "addressCountry": "DE"
+        },
+        "telephone": "+49 711 484490",
+        "url": "https://fotostudiophilippi.de/",
+        "description": "Professionelles Mietstudio für Fotografen und Videografen in Stuttgart.",
+        "openingHours": "Mo-Fr 09:00-19:00"
+      }
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <main>
+      <partial path="./src/html/homestage.html" />
+      <partial path="./src/html/projects.html" />
+      <partial path="./src/html/studio.html" />
+      <partial path="./src/html/costs.html" />
+      <partial path="./src/html/location.html" />
+      <partial path="./src/html/contact.html" />
+      <partial path="./src/html/footer.html" />
+    </main>
   </body>
 </html>
